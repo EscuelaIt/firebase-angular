@@ -1,3 +1,18 @@
 <h1>
   {{title}}
 </h1>
+<button (click)="login()">Login</button>
+<button (click)="eliminarTodos()">eliminarTodos</button>
+<button (click)="snapshot()">snapshot</button>
+snapshot
+
+<div *ngFor="let item of usuariosLogueados | async">
+  Nombre: {{item.nombre}} <br>
+  Email : {{item.email}} 
+  <button (click)="eliminar(item.$key)">Eliminar</button>
+  <button (click)="update(item.$key)">update</button>
+</div>
+
+<button (click)="filterBy('small')">Small</button>
+<button (click)="filterBy('medium')">Medium</button>
+<button (click)="filterBy('large')">Large</button>
